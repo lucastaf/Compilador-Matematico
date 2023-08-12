@@ -17,7 +17,7 @@ int isOperator(char value){
 
 void printArray(int array[], int size){
     for (int i = 0; i < size; i ++){
-        cout << array[i];
+        cout << array[i] << " ";
     }
     cout << "\n";
     
