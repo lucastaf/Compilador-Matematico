@@ -82,6 +82,13 @@ class equacao {
         QtdOperadores = index;
     }
 
+    void get_finalAnswer(){
+        resultado = 0;
+        resultado += ArrayNumeros[0];
+        for(int i = 0; i < QtdOperadores; i++) {
+            resultado = operate(resultado, ArrayNumeros[i + 1], ArrayOperadores[i]);
+        }
+    }
 
     public :
      
@@ -93,6 +100,7 @@ class equacao {
      int *ArrayNumeros;
      char *ArrayOperadores;
      int QtdOperadores;
+     int resultado;
 
      void calculate(){
         set_sizes();
@@ -100,6 +108,7 @@ class equacao {
         get_numberindexes();
         get_numbers();
         get_operadores();
+        get_finalAnswer();
      }
 
      void print_Indexes() {
@@ -116,6 +125,6 @@ int main() {
     cin >> equacao1.EquacaoExtensa;
     equacao1.calculate();
 
-    printArray(equacao1.ArrayNumeros,equacao1.QtdNumeros);
+    cout << equacao1.resultado;
     return 0;
 }
