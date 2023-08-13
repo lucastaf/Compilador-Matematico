@@ -22,3 +22,17 @@ void printArray(int array[], int size){
     cout << "\n";
     
 }
+
+int GetInt(int Charnumber){
+    //Esse codigo serve para tirar proveito de uma propriedade da tabela ascii.
+    return Charnumber - 48;
+}
+
+int elevado(int base, int expoente){
+    int res = 1;
+    for (int i = 0; i < expoente; i ++){
+        res = res * base;
+    }
+    return res;
+
+}

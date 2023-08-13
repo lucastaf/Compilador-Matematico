@@ -59,6 +59,18 @@ class equacao {
 
     }
 
+    void get_numbers() {
+        for (int num = 0; num < QtdNumeros; num ++){
+            int casaDecimal = 0;
+            int res = 0;
+            for (int digito = MatrixIndex[num][1]; digito >= MatrixIndex[num][0]; digito--){
+                res += GetInt(EquacaoExtensa[digito]) * (elevado(10,casaDecimal));
+                casaDecimal++;
+            }
+            ArrayNumeros[num] = res;
+        }
+    }
+
 
     public :
      
@@ -74,6 +86,7 @@ class equacao {
         set_sizes();
         get_types();
         get_numberindexes();
+        get_numbers();
      }
 
      void print_Indexes() {
@@ -90,8 +103,6 @@ int main() {
     cin >> equacao1.EquacaoExtensa;
     equacao1.calculate();
 
-    equacao1.print_Indexes();
-
-
+    printArray(equacao1.ArrayNumeros,equacao1.QtdNumeros);
     return 0;
 }
