@@ -11,7 +11,7 @@ class equacao {
      EquacaoSize = EquacaoExtensa.size();
      Arraytipo = new int[EquacaoSize];
      ArrayNumeros = new int [EquacaoSize];
-     ArrayOperadores = new int[EquacaoSize];
+     ArrayOperadores = new char[EquacaoSize];
      MatrixIndex = new int* [EquacaoSize];
      for (int i = 0; i < EquacaoSize; i++){
         MatrixIndex[i] = new int[2];
@@ -71,6 +71,17 @@ class equacao {
         }
     }
 
+    void get_operadores(){
+        int index = 0;
+        for (int i = 0; i < EquacaoSize; i ++) {
+            if (Arraytipo[i] == 2){
+                ArrayOperadores[index] = EquacaoExtensa[i];
+                index++;
+            }
+        }
+        QtdOperadores = index;
+    }
+
 
     public :
      
@@ -80,13 +91,15 @@ class equacao {
      int **MatrixIndex;
      int QtdNumeros;
      int *ArrayNumeros;
-     int *ArrayOperadores;
+     char *ArrayOperadores;
+     int QtdOperadores;
 
      void calculate(){
         set_sizes();
         get_types();
         get_numberindexes();
         get_numbers();
+        get_operadores();
      }
 
      void print_Indexes() {
