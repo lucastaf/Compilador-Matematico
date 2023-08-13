@@ -100,7 +100,7 @@ class equacao {
      int *ArrayNumeros;
      char *ArrayOperadores;
      int QtdOperadores;
-     int resultado;
+     float resultado;
 
      void calculate(){
         set_sizes();

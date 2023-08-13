@@ -37,7 +37,7 @@ int elevado(int base, int expoente){
 
 }
 
-int operate(int a, int b, char operador) {
+float operate(int a, int b, char operador) {
         //Na tabela Ascii:
         //43 = +, 45 = -, 47 = /, 42 = *.
         switch(operador){
