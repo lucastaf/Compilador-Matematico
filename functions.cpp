@@ -36,3 +36,25 @@ int elevado(int base, int expoente){
     return res;
 
 }
+
+int operate(int a, int b, char operador) {
+        //Na tabela Ascii:
+        //43 = +, 45 = -, 47 = /, 42 = *.
+        switch(operador){
+        case '+':
+         return a + b;
+        break;
+        case '-':
+         return a - b;
+        break;
+        case '/':
+         return a / b;
+        break;
+        case '*':
+         return a * b;
+        break;
+        }
+
+
+        return 0;
+}
