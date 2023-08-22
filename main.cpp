@@ -83,6 +83,17 @@ class equacao {
     }
 
     void get_finalAnswer(){
+        
+        for (int i = 0; i < QtdOperadores; i++){
+            if (ArrayOperadores[i] == '*' || ArrayOperadores[i] == '/'){
+                ArrayNumeros[i] = operate(ArrayNumeros[i], ArrayNumeros[i+1],ArrayOperadores[i]);
+                shift_array_char(ArrayOperadores,QtdOperadores,i);
+                shift_array(ArrayNumeros,QtdNumeros,i+1);
+                QtdNumeros--;
+                QtdOperadores--;
+            }
+
+        }
         resultado = 0;
         resultado += ArrayNumeros[0];
         for(int i = 0; i < QtdOperadores; i++) {

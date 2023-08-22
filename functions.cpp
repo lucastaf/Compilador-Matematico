@@ -58,3 +58,17 @@ float operate(int a, int b, char operador) {
 
         return 0;
 }
+
+void shift_array(int array[], int size, int index){
+    for (int i = index; i < size - 1; i ++){
+        array[i] = array[i+1];
+    }
+    array[size-1] = 0;
+}
+
+void shift_array_char(char array[], int size, int index){
+    for (int i = index; i < size - 1; i ++){
+        array[i] = array[i+1];
+    }
+    array[size-1] = 0;
+}
